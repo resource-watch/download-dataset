@@ -1,0 +1,11 @@
+prod:
+  image: vizzuality/download-dataset-api:1.0.0${STAGING}
+  ports:
+    - "4300"
+  env_file:
+    - prod.env
+  command: start
+  log_driver: "gelf"
+  restart: always
+  log_opt:
+    gelf-address: ${GELF_ADDRESS}

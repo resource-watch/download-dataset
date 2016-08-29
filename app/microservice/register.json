@@ -1,0 +1,14 @@
+{
+    "id": "#(service.id)",
+    "name": "#(service.name)",
+    "tags": ["rw", "gfw"],
+    "urls": [{
+        "url": "/download/:dataset",
+        "method": "GET",
+        "binary": true,
+        "endpoints": [{
+            "method": "GET",
+            "path": "/api/v1/download/:dataset"
+        }]
+    }]
+}

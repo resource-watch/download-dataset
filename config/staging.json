@@ -1,0 +1,8 @@
+{
+    "logger": {
+        "name": "download-dataset-STAGING",
+        "level": "debug",
+        "toFile": false,
+        "dirLogFile": null
+    }
+}

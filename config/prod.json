@@ -1,0 +1,8 @@
+{
+    "logger": {
+        "name": "download-dataset-api",
+        "level": "info",
+        "toFile": false,
+        "dirLogFile": null
+    }
+}
