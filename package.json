@@ -1,5 +1,5 @@
 {
-  "name": "download-dataset-api",
+  "name": "download-dataset",
   "version": "1.0.0",
   "description": "Download Dataset API",
   "main": "index.js",
@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gfw-api/download-dataset-api.git"
+    "url": "git+https://github.com/gfw-api/download-dataset.git"
   },
   "keywords": [
-    "download-dataset-api",
+    "download-dataset",
     "api",
     "microservice",
     "node",
@@ -24,9 +24,9 @@
   "author": "rrequero",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gfw-api/download-dataset-api/issues"
+    "url": "https://github.com/gfw-api/download-dataset/issues"
   },
-  "homepage": "https://github.com/gfw-api/download-dataset-api#readme",
+  "homepage": "https://github.com/gfw-api/download-dataset#readme",
   "dependencies": {
     "bunyan": "1.7.1",
     "config": "1.19.0",

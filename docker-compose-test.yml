@@ -2,7 +2,7 @@ test:
   extends:
     file: base.yml
     service: base
-  container_name: download-dataset-api-test
+  container_name: download-dataset-test
   environment:
     NODE_ENV: test
   command: test

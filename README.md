@@ -3,13 +3,11 @@
 
 This repository is the microservice that it implement the download query funcionality and exposed the /download endpoint in the api-gateway
 
-[View the documentation for this
-API](http://gfw-api.github.io/swagger-ui/?url=https://raw.githubusercontent.com/resource-watch/download-dataset-api/master/app/microservice/swagger.yml#/DOWNLOAD)
 
 ## First time user
 Perform the following steps:
 * [Install docker](https://docs.docker.com/engine/installation/)
-* Clone this repository: ```git clone git@github.com:Vizzuality/download-dataset-api.git```
+* Clone this repository: ```git clone git@github.com:resource-watch/download-dataset.git```
 * Enter in the directory (cd download-dataset-api)
 * After, you open a terminal (if you have mac or windows, open a terminal with the 'Docker Quickstart Terminal') and execute the next command:
 

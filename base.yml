@@ -5,4 +5,4 @@ base:
   environment:
     PORT: 4300
     NODE_PATH: app/src
-  container_name: download-dataset-api
+  container_name: download-dataset

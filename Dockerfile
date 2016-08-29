@@ -1,7 +1,7 @@
 FROM mhart/alpine-node:6.2
 MAINTAINER raul.requero@vizzuality.com
 
-ENV NAME download-dataset-api
+ENV NAME download-dataset
 ENV USER microservice
 
 RUN apk update && apk upgrade && \
@@ -25,7 +25,7 @@ COPY ./app /opt/$NAME/app
 RUN chown $USER /opt/$NAME
 
 # Tell Docker we are going to use this ports
-EXPOSE 4200
+EXPOSE 4300
 USER $USER
 
 ENTRYPOINT ["./entrypoint.sh"]

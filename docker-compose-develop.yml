@@ -8,4 +8,4 @@ develop:
     API_GATEWAY_URL: http://192.168.99.100:8000
   command: develop
   volumes:
-    - ./app:/opt/download-dataset-api/app
+    - ./app:/opt/download-dataset/app
