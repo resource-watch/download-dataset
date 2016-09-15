@@ -4,6 +4,7 @@ prod:
     - "4300"
   env_file:
     - prod.env
+  dns: ${DNS_SERVER}
   command: start
   log_driver: "gelf"
   restart: always
