@@ -9,7 +9,7 @@
                 "path": "/api/v1/download/:dataset"
             },
             "filters": [{
-                "name": "check-provider",
+                "name": "dataset",
                 "path": "/dataset/:dataset",
                 "method": "GET",
                 "params": {
