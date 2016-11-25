@@ -1,7 +1,7 @@
 {
     "logger": {
         "name": "download-dataset-STAGING",
-        "level": "debug",
+        "level": "info",
         "toFile": false,
         "dirLogFile": null
     }

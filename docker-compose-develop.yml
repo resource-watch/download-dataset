@@ -5,7 +5,9 @@ develop:
   container_name: download-dataset-api-develop
   environment:
     NODE_ENV: dev
-    API_GATEWAY_URL: http://192.168.99.100:8000
+    CT_URL: http://mymachine:9000
+    LOCAL_URL: http://mymachine:4300
+    DEBUG: "*"
   command: develop
   volumes:
     - ./app:/opt/download-dataset/app

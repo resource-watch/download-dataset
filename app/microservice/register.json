@@ -1,14 +1,74 @@
 {
-    "id": "#(service.id)",
     "name": "#(service.name)",
-    "tags": ["rw", "gfw"],
-    "urls": [{
-        "url": "/download/:dataset",
-        "method": "GET",
-        "binary": true,
-        "endpoints": [{
+    "endpoints": [
+        {
+            "path": "/download/:dataset",
             "method": "GET",
-            "path": "/api/v1/download/:dataset"
-        }]
-    }]
+            "redirect": {
+                "method": "GET",
+                "path": "/api/v1/download/:dataset"
+            },
+            "filters": [{
+                "name": "dataset-json",
+                "path": "/dataset/:dataset",
+                "method": "GET",
+                "params": {
+                    "dataset": "dataset"
+                },
+                "compare": {
+                    "data": {
+                        "attributes": {
+                            "provider": "rwjson"
+                        }
+                    }
+                }
+            }]
+        },
+        {
+            "path": "/download/:dataset",
+            "method": "GET",
+            "redirect": {
+                "method": "GET",
+                "path": "/api/v1/download/:dataset"
+            },
+            "filters": [{
+                "name": "dataset-arcgis",
+                "path": "/dataset/:dataset",
+                "method": "GET",
+                "params": {
+                    "dataset": "dataset"
+                },
+                "compare": {
+                    "data": {
+                        "attributes": {
+                            "provider": "featureservice"
+                        }
+                    }
+                }
+            }]
+        },
+        {
+            "path": "/download/:dataset",
+            "method": "GET",
+            "redirect": {
+                "method": "GET",
+                "path": "/api/v1/download/:dataset"
+            },
+            "filters": [{
+                "name": "dataset-carto",
+                "path": "/dataset/:dataset",
+                "method": "GET",
+                "params": {
+                    "dataset": "dataset"
+                },
+                "compare": {
+                    "data": {
+                        "attributes": {
+                            "provider": "cartodb"
+                        }
+                    }
+                }
+            }]
+        }
+    ]
 }
