@@ -9,65 +9,36 @@
                 "path": "/api/v1/download/:dataset"
             },
             "filters": [{
-                "name": "dataset-json",
+                "name": "check-provider",
                 "path": "/dataset/:dataset",
                 "method": "GET",
                 "params": {
                     "dataset": "dataset"
                 },
-                "compare": {
-                    "data": {
-                        "attributes": {
-                            "provider": "rwjson"
+                "condition": "OR",
+                "compare": [
+                    {
+                        "data": {
+                            "attributes": {
+                                "provider": "featureservice"
+                            }
+                        }
+                    },
+                    {
+                        "data": {
+                            "attributes": {
+                                "provider": "cartodb"
+                            }
+                        }
+                    },
+                    {
+                        "data": {
+                            "attributes": {
+                                "provider": "rwjson"
+                            }
                         }
                     }
-                }
-            }]
-        },
-        {
-            "path": "/download/:dataset",
-            "method": "GET",
-            "redirect": {
-                "method": "GET",
-                "path": "/api/v1/download/:dataset"
-            },
-            "filters": [{
-                "name": "dataset-arcgis",
-                "path": "/dataset/:dataset",
-                "method": "GET",
-                "params": {
-                    "dataset": "dataset"
-                },
-                "compare": {
-                    "data": {
-                        "attributes": {
-                            "provider": "featureservice"
-                        }
-                    }
-                }
-            }]
-        },
-        {
-            "path": "/download/:dataset",
-            "method": "GET",
-            "redirect": {
-                "method": "GET",
-                "path": "/api/v1/download/:dataset"
-            },
-            "filters": [{
-                "name": "dataset-carto",
-                "path": "/dataset/:dataset",
-                "method": "GET",
-                "params": {
-                    "dataset": "dataset"
-                },
-                "compare": {
-                    "data": {
-                        "attributes": {
-                            "provider": "cartodb"
-                        }
-                    }
-                }
+                ]
             }]
         }
     ]
