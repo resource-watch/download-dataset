@@ -1,14 +1,45 @@
 {
-    "id": "#(service.id)",
     "name": "#(service.name)",
-    "tags": ["rw", "gfw"],
-    "urls": [{
-        "url": "/download/:dataset",
-        "method": "GET",
-        "binary": true,
-        "endpoints": [{
+    "endpoints": [
+        {
+            "path": "/download/:dataset",
             "method": "GET",
-            "path": "/api/v1/download/:dataset"
-        }]
-    }]
+            "redirect": {
+                "method": "GET",
+                "path": "/api/v1/download/:dataset"
+            },
+            "filters": [{
+                "name": "dataset",
+                "path": "/dataset/:dataset",
+                "method": "GET",
+                "params": {
+                    "dataset": "dataset"
+                },
+                "condition": "OR",
+                "compare": [
+                    {
+                        "data": {
+                            "attributes": {
+                                "provider": "featureservice"
+                            }
+                        }
+                    },
+                    {
+                        "data": {
+                            "attributes": {
+                                "provider": "cartodb"
+                            }
+                        }
+                    },
+                    {
+                        "data": {
+                            "attributes": {
+                                "provider": "rwjson"
+                            }
+                        }
+                    }
+                ]
+            }]
+        }
+    ]
 }
