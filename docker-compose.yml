@@ -6,9 +6,8 @@ prod:
     - prod.env
   dns: ${DNS_SERVER}
   command: start
-  log_driver: "gelf"
   restart: always
   log_driver: "syslog"
   log_opt:
-      syslog-address: ${SYSLOG_ADDRESS}
-      tag: download-dataset${STAGING}
+    syslog-address: ${SYSLOG_ADDRESS}
+    tag: download-dataset${STAGING}
