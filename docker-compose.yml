@@ -1,5 +1,5 @@
 prod:
-  image: vizzuality/download-dataset:1.1.0${STAGING}
+  image: vizzuality/download-dataset:1.2.0${STAGING}
   ports:
     - "4300"
   env_file:

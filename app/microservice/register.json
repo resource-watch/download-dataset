@@ -2,7 +2,7 @@
     "name": "#(service.name)",
     "endpoints": [
         {
-            "path": "/download/:dataset",
+            "path": "/v1/download/:dataset",
             "method": "GET",
             "redirect": {
                 "method": "GET",
@@ -10,7 +10,7 @@
             },
             "filters": [{
                 "name": "dataset",
-                "path": "/dataset/:dataset",
+                "path": "/v1/dataset/:dataset",
                 "method": "GET",
                 "params": {
                     "dataset": "dataset"
@@ -21,13 +21,6 @@
                         "data": {
                             "attributes": {
                                 "provider": "featureservice"
-                            }
-                        }
-                    },
-                    {
-                        "data": {
-                            "attributes": {
-                                "provider": "cartodb"
                             }
                         }
                     },
